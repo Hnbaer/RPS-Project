@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Choice : MonoBehaviour {
-
-	public int amt = 3;
+	
 	public string type = "none";
 	Button button;
 	public int spr = 0;
@@ -17,15 +16,11 @@ public class Choice : MonoBehaviour {
 
 		button.onClick.AddListener (
 			delegate {
-				subAmt();
+				player.subCard(spr);
+				player.setSprite(spr);
 			}
 		);
 	
-	}
-
-	void subAmt(){
-		amt -= 1;
-		player.setSprite (spr);
 	}
 	
 	// Update is called once per frame
